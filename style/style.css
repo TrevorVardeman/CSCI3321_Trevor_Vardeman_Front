@@ -17,6 +17,14 @@
     float: left;  
 }
 
+#iname2{
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    height: 300px;
+    width: 300px;
+}
+
 h1{
     text-align: center;
 }
