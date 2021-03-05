@@ -1,0 +1,47 @@
+#container{
+    width: 800px;
+    height: 525px;
+    border: 15px solid #0000A0;
+    text-align: center;
+    margin: auto;
+    text-align: center;
+}
+
+.even{
+    background-color: black;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border: 5px solid gray;
+    margin: 5px auto;
+    line-height: 50px;
+}
+
+.odd{
+    width: 50px;
+    height: 50px;
+    border: 5px solid purple;
+    margin: 5px auto;
+    line-height: 50px;
+}
+
+#container:hover .odd{
+    transform: translate(250px, 0px) rotate(-1080deg) scale(.75, .75);;
+    transition: transform 2s;
+    transition-timing-function: linear;
+    
+}
+
+#container:hover .even{
+    transform: translate(-250px, 0px) rotate(1080deg) scale(2, 2);;
+    transition: transform 2s;
+    transition-timing-function: linear;
+}
+
+#container:hover{
+    border-radius: 15px;
+    height: 555px;
+    transition: border-radius 2s, height 2s;
+    transition-timing-function: linear;
+}
+
