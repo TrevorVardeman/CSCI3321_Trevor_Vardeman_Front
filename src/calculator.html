@@ -48,7 +48,8 @@
                             break;
 
                             case '=':
-                               d.innerHTML = eval(newValue);
+                               d.innerHTML = eval('newValue');
+                               break;
 
                                                 
                 }
@@ -73,7 +74,7 @@
         <div class="key digit-7" onclick="updateDisplay('7')">7</div>
         <div class="key digit-8" onclick="updateDisplay('8')">8</div>
         <div class="key digit-9" onclick="updateDisplay('9')">9</div>
-        <div class="key equal-key" onclick="updateDisplay('=')">=</div>
+        <div class="key equal-key">=</div>
         <div class="key clear-key" onclick="updateDisplay('')">AC</div>
     </div>
 
