@@ -1,0 +1,57 @@
+#board{
+    display: grid;
+    grid-gap: 5px;
+    width: 350px;
+    height: 350px;
+    border-radius: 10px;
+    margin: auto;
+    grid-template-areas: 
+    "cell1 cell2 cell3"
+    "cell4 cell5 cell6"
+    "cell7 cell8 cell9";
+}
+
+.game-space{
+    height: 125px;
+    width: 125px;
+    line-height: 30px;
+    border: 5px solid tan;
+    background-color: tan;
+
+}
+
+#box-1{
+    grid-area: cell1;
+}
+
+#box-2{
+    grid-area: cell2;
+}
+
+#box-3{
+    grid-area: cell3;
+}
+
+#box-4{
+    grid-area: cell4;
+}
+
+#box-5{
+    grid-area: cell5;
+}
+
+#box-6{
+    grid-area: cell6;
+}
+
+#box-7{
+    grid-area: cell7
+}
+
+#box-8{
+    grid-area: cell8
+}
+
+#box-9{
+    grid-area: cell9;
+}
