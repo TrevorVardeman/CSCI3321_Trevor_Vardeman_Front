@@ -4,6 +4,18 @@ var totalMoves = 0;
 function placeMarker(spotId){
     if(!gameOver){
     var spot = document.getElementById(spotId);
+    if (spot.innerHTML == ''){
+        spot.innerHTML = currentPlayer;
+        totalMoves++;
+    }
+    if (currentPlayerWon()){
+        updateGameStatus();
+    }
+    else {
+        switchPlayer();
+        updateGameStatus();
+    }
+
     //if the spot is empty, change spot.innerHTML to mark the spot and increment counter
     // if (currentPlayerWon()){
         //updateGameStatus();
@@ -27,20 +39,19 @@ function currentPlayerWon(){
     var s8 = document.getElementById('box-8');
     var s9 = document.getElementById('box-9');
 
-    if ((s1.innerHTML === s2.innerHTML && s2.innerHTML === s3.innerHTML) ||
-    (s4.innerHTML === s5.innerHTML && s5.innerHTML === s6.innerHTML) ||
-    (s7.innerHTML === s8.innerHTML && s8.innerHTML === s9.innerHTML) ||
-    (s1.innerHTML === s4.innerHTML && s4.innerHTML === s7.innerHTML) ||
-    (s2.innerHTML === s5.innerHTML && s5.innerHTML === s8.innerHTML) ||
-    (s3.innerHTML === s6.innerHTML && s6.innerHTML === s9.innerHTML) ||
-    (s1.innerHTML === s5.innerHTML && s5.innerHTML === s9.innerHTML) ||
-    (s3.innerHTML === s5.innerHTML && s5.innerHTML === s7.innerHTML)){
+    if ((s1.innerHTML === s2.innerHTML && s2.innerHTML === s3.innerHTML && s1.innerHTML != '' && s2.innerHTML != '' && s3.innerHTML != '') ||
+    (s4.innerHTML === s5.innerHTML && s5.innerHTML === s6.innerHTML && s4.innerHTML != '' && s5.innerHTML != '' && s6.innerHTML != '') ||
+    (s7.innerHTML === s8.innerHTML && s8.innerHTML === s9.innerHTML && s7.innerHTML != '' && s8.innerHTML != '' && s9.innerHTML != '') ||
+    (s1.innerHTML === s4.innerHTML && s4.innerHTML === s7.innerHTML && s1.innerHTML != '' && s4.innerHTML != '' && s7.innerHTML != '') ||
+    (s2.innerHTML === s5.innerHTML && s5.innerHTML === s8.innerHTML && s2.innerHTML != '' && s5.innerHTML != '' && s8.innerHTML != '') ||
+    (s3.innerHTML === s6.innerHTML && s6.innerHTML === s9.innerHTML && s3.innerHTML != '' && s6.innerHTML != '' && s9.innerHTML != '') ||
+    (s1.innerHTML === s5.innerHTML && s5.innerHTML === s9.innerHTML && s1.innerHTML != '' && s5.innerHTML != '' && s9.innerHTML != '') ||
+    (s3.innerHTML === s5.innerHTML && s5.innerHTML === s7.innerHTML && s3.innerHTML != '' && s5.innerHTML != '' && s7.innerHTML != '')){
         gameOver = true;
     }
     else{
         gameOver = false;
     }
-    //Check for a tie
     if (!gameOver){
         if (totalMoves == 9){
             gameOver = true;
@@ -51,11 +62,24 @@ function currentPlayerWon(){
 
 function updateGameStatus(){
     var statusboard = document.getElementById('status');
-    if (gameOver){
-        //some message
+    if (gameOver && totalMoves == 9){
+        statusboard.innerHTML = "It is a tie!";
     }
-    //else{
-        //if not a tie, prompt a user to make a move
-        // else, display the message
-    //}
+    else if (gameOver){
+        statusboard.innerHTML = "Player" + currentPlayer + "wins!";
+    }
+    else{
+        statusboard.innerHTML = "It is " + currentPlayer + "'s turn";
+    }
+    document.getElementById('start').innerHTML = "";
+    
+}
+
+function switchPlayer(){
+    if (currentPlayer == 'X'){
+        currentPlayer = 'O';
+    }
+    else{
+        currentPlayer = 'X';
+    }
 }

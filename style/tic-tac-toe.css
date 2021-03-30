@@ -14,7 +14,7 @@
 .game-space{
     height: 125px;
     width: 125px;
-    line-height: 30px;
+    line-height: 125px;
     border: 5px solid tan;
     background-color: tan;
 
@@ -22,36 +22,54 @@
 
 #box-1{
     grid-area: cell1;
+    text-align: center;
+    font-size: 25px;
 }
 
 #box-2{
     grid-area: cell2;
+    text-align: center;
+    font-size: 25px;
 }
 
 #box-3{
     grid-area: cell3;
+    text-align: center;
+    font-size: 25px;
 }
 
 #box-4{
     grid-area: cell4;
+    text-align: center;
+    font-size: 25px;
 }
 
 #box-5{
     grid-area: cell5;
+    text-align: center;
+    font-size: 25px;
 }
 
 #box-6{
     grid-area: cell6;
+    text-align: center;
+    font-size: 25px;
 }
 
 #box-7{
-    grid-area: cell7
+    grid-area: cell7;
+    text-align: center;
+    font-size: 25px;
 }
 
 #box-8{
-    grid-area: cell8
+    grid-area: cell8;
+    text-align: center;
+    font-size: 25px;
 }
 
 #box-9{
     grid-area: cell9;
+    font-size: 25px;
+    text-align: center;
 }
